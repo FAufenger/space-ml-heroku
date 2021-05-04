@@ -7,4 +7,4 @@ Keras-Preprocessing==1.1.0
 numpy==1.18.0
 scikit-learn==0.22
 scipy==1.4.1
-tensorflow==2.4.1-cp36-cp36m-macosx_10_11_x86_64.whl 
+tensorflow==2.0.0
