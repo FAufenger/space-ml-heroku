@@ -72,6 +72,7 @@ function createMarkers(response) {
     // ufo1990s = [];
     // ufo2000s = [];
     // ufo2010s = [];
+
     console.log(response[1]);
     for (var index = 0; index < response.length; index++) {
 
@@ -82,9 +83,9 @@ function createMarkers(response) {
         coordinateList.push(features[11]);
 
 
-        var ufoMarker = L.marker(coordinateList).bindPopup("<h3>Date: " + features.date_occured + "</h3><h3>Place: " + features.country + " : " + features.state + " : " + features.city + "</h3><h3>Shape: " + features.shape + "</h3><h3>Comments: " + features.comments + "</h3>");
+        var ufoMarker = L.marker(coordinateList).bindPopup("<h3>Date: " + features[0] + "</h3><h3>Place: " + features[4] + " : " + features[3] + " : " + features[2] + "</h3><h3>Shape: " + features[5] + "</h3><h3>Comments: " + features[8] + "</h3>");
             
-        var t = parseInt(features.date_occured.slice(0,3));
+        var t = parseInt(features.slice(0,3));
         
         console.log(t);
 
