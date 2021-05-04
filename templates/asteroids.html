@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Space?!</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <!-- Our CSS -->
+  <script type="text/javascript" src="{{ url_for('static', filename='css/style.css') }}"></script>
+
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #dcdce7;">
+    <a class="navbar-brand" href="/">
+      <img src="{{ url_for('static', filename='img/alien_face.png') }}" width="40" height="45" alt="">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <ul class="navbar-nav">
+        <li><a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a></li>
+
+        <li><a class="nav-item nav-link" href="{{ url_for('asteroids') }}">Asteroids</a></li>
+        <li><a class="nav-item nav-link" href="{{ url_for('stars') }}">Stars</a></li>
+        <li><a class="nav-item nav-link" href="{{ url_for('ufos') }}">UFOs</a></li>
+
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Our rows function in containers (grid created). -->
+  <div class="container">
+    <header class="header">
+      <h1>Asteroids</h1>
+    </header>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="text-center">
+          <h4></h4>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="text-center">
+          <h4>View the tableau charts below to learn more about asteroids! Click for an interactive tableau experience.
+          </h4>
+          <div class="text-center">
+            <p>............................................
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="text-center">
+          <div class="img-thumbnail" width=1000>
+            <p><a
+                href="https://public.tableau.com/profile/bridget.reardon#!/vizhome/Asteroids_16197470090820/Dashboard1"
+                class="btn btn-default" class="center" role="button">
+                <img src="{{ url_for('static', filename='img/OrbitalPeriods.png') }}" alt="Orbital_Periods_link"
+                  class="center"></a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center">
+      <p>............................................
+      </p>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="text-center">
+          <div class="img-thumbnail" width=1000>
+            <p><a
+                href="https://public.tableau.com/profile/bridget.reardon#!/vizhome/Asteroids_16197470090820/Dashboard1"
+                class="btn btn-default" class="center" role="button">
+                <img src="{{ url_for('static', filename='img/Magnitude.png') }}" alt="Orbital_Periods_link"
+                  class="center"></a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- D3 JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+    <!-- Our JavaScript -->
+    <!-- <script type="text/javascript" src="static/logic.js"></script> -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/asteroids.js') }}"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"></script>
+
+</body>
+
+</html>

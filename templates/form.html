@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Space?!</title>
+
+    <!-- Bring in our bootstrap stylesheet -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Our CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #dcdce7;">
+        <a class="navbar-brand" href="/">
+            <img src="{{ url_for('static', filename='img/alien_face.png') }}" width="40" height="45" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <ul class="navbar-nav">
+                <li><a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a></li>
+
+                <li><a class="nav-item nav-link" href="{{ url_for('asteroids') }}">Asteroids</a></li>
+                <li><a class="nav-item nav-link" href="{{ url_for('stars') }}">Stars</a></li>
+                <li><a class="nav-item nav-link" href="{{ url_for('ufos') }}">UFOs</a></li>
+
+            </ul>
+        </div>
+    </nav>
+
+
+    <br><br>
+    <div class="container">
+        <div class="jumbotron" style="text-align: center">
+            <h1>What type of star could it be?</h1>
+            <p>Enter star details below!<br>
+            Please fill in each option for a reading.</p>
+        </div>
+        <div class="row">
+            <div class="col-md-offset-2 col-md-8">
+                <form method="POST" action="/send" role="form", name="petform">
+                    <div class="form-group">
+                        <label for="inputTemperature">Temperature (K)</label>
+                        <input type="integer" class="form-control" id="inputTemperature" name="TemperatureValue" placeholder="(0-50000)">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputL">Solar Luminosity (Whatts)</label>
+                        <input type="integer" class="form-control" id="inputL" name="LValue" placeholder="(0.000001 - 850000)">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputR">Radius of Sun (m)</label>
+                        <input type="integer" class="form-control" id="inputR" name="RValue" placeholder="(0.001 - 2000)">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputAM">Absolute Magnitude</label>
+                        <input type="integer" class="form-control" id="inputAM" name="AMValue" placeholder="(-12 - 21)">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputColor">Color</label>
+                        <select id="inputColor" name="ColorValue">
+                            <option value="0">Blue</option>
+                            <option value="1">Blue White</option>
+                            <option value="2">Orange</option>
+                            <option value="3">Orange Red</option>
+                            <option value="4">Pale Yellow Orange</option>
+                            <option value="5">Red</option>
+                            <option value="6">White</option>
+                            <option value="7">White Yellow</option>
+                            <option value="8">Whitish</option>
+                            <option value="9">Yellowish</option>
+                            <option value="10">Yellowish White</option>
+                            <option value="11">Yellow White</option>
+                        </select>
+                        <!-- <input type="interger" class="form-control" id="inputColor" name="ColorValue" placeholder="Color"> -->
+                    </div>
+                    <div class="form-group">
+                        <label for="inputSpectralClass">Spectral Class</label>
+                        <select id="inputSpectralClass" name="SpectralClassValue">
+                            <option value="5">M</option>
+                            <option value="4">K</option>
+                            <option value="3">G</option>
+                            <option value="2">F</option>
+                            <option value="0">A</option>
+                            <option value="1">B</option>
+                            <option value="6">O</option>
+                            
+                            
+                        </select>
+                        <!-- <input type="integer" class="form-control" id="inputSpectralClass" name="SpectralClassValue" placeholder="Spectral Class"> -->
+                    </div>
+                    
+                    <input type="submit" value="submit" class="btn btn-warning">
+                </form>
+            </div>
+        </div>
+
+    <br><br>
+    <p>Some samples from the data show that <br>
+        Temperature: 3068,  L: 0.0024,  R: 0.17,   A_M: 16.12, Color: Red, Spectral Class: M = Red Dwarf <br>
+        Temperature: 3192,  L: 0.00362, R: 0.1967, A_M: 13.53, Color: Red, Spectral Class: M = Brown Dwarf <br>
+        Temperature: 16500, L: 0.013,   R: 0.014,  A_M: 11.89, Color: Blue White, Spectral Class: B = White Dwarf <br>
+        Temperature: 39000, L: 204000,  R: 10.6,   A_M: -4.7,  Color: Blue, Spectral Class: O = Main Sequence <br>
+        Temperature: 3826,  L: 200000,  R: 19,     A_M: -6.93, Color: Red, Spectral Class: M = Super Giant <br>
+        Temperature: 3650,  L: 310000,  R: 1324,   A_M: -7.79, Color: Red, Spectral Class: M = Hyper Giant
+
+
+    </p>
+
+
+
+
+    </div>
+
+
+
+    <!-- D3 JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+    <!-- Our JavaScript -->
+    <!-- <script type="text/javascript" src="static/logic.js"></script> -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/logic.js') }}"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,194 @@
+/* Lets add some style!!*/
+
+/* Giving the body the specified background color, adding font sizes for the h1 and h3 elements we'll be using */
+
+body {
+  background-image: url('static/img/Astronaut.png'); /*The image used */
+  background-color: rgb(141, 155, 182); /* Used if the image is unavailable */
+  height: 1500px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+  
+h1 {
+  font-size: 50px;
+  text-align: center;
+  background-color: #2427278c;
+}
+
+h2 {
+  font-size: 15px;
+  padding-top: 5px;
+  background-color: #2427278c;
+  text-align: "center";
+}
+
+h3 {
+  padding-top: 30px;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: "center";
+  color: rgb(246, 249, 250);
+  background-color: #2427278c;
+}
+
+h4 {
+  padding-top: 30px;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: underline;
+  text-align: "center";
+  color: rgb(234, 242, 243);
+}
+
+
+/* Styling the header, giving it a height, a background color, and some top padding */
+.header {
+  height: 160px;
+  margin-top: 78px;
+  padding-top: 20px;
+  text-align: "center";
+}
+
+.small_header {
+  height: 200px;
+  padding-top: 20px;
+  background: rgb(32, 110, 122);
+  text-align:center
+}
+
+.thumbnail_header {
+  padding-top: 20px;
+  background: #fafafa;
+  text-align:center
+}
+
+.thumbnail_header h3 {
+  padding: 20px;
+  margin: 0;
+  color: rgb(32, 110, 122);
+  text-align: "center";
+}
+
+/* Centering our h1 tag inside our header, giving it a little padding, removing its margin */
+.header h1 {
+  padding: 20px;
+  margin: 0;
+  color: #fafafa;
+  text-align: "center";
+}
+
+.small_header h1 {
+  padding: 30px;
+  margin: 0;
+  color: #000;
+  text-align: "center";
+}
+
+/* Giving the .post element margin on 3 sides */
+.post {
+  margin-top: 50px;
+  margin-right: 100px;
+  margin-left: 100px;
+}
+
+/*Nav Bar Info*/
+.navbar {
+  overflow: visible;
+  font-size: 25px; 
+  position: fixed; 
+  top: 0; 
+  width: 100%;
+  z-index: 1
+}
+
+.navigation .navbar-brand {
+  margin-left: 0px;
+  padding: 10;
+  font-weight: bold;
+  background-color:#fafafa;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+   
+.active, .dropdown-menu .dropdown-item:active a:hover {
+  color:  rgb(32, 110, 122);
+}
+
+.dropdown-item {
+  color:  rgb(32, 110, 122);
+  background:#cdd8da;  
+}
+
+.dropdown .dropdown-menu .dropdown-item:active, .dropdown .dropdown-menu .dropdown-item:hover {
+  background-color: #242721bf;
+}
+  
+.nav-link:hover {
+  color: #662525;
+  background-color: #474b4136;
+}
+  
+.navbar-brand{
+  background:#cdd8da;
+}
+
+.navbar-brand:hover {
+  color: rgb(165, 165, 165);
+}
+  
+.active, .panel:hover {
+  border-color:rgb(32, 110, 122);
+  border-style: solid;
+}
+
+a {
+  color: rgb(32, 110, 122);
+  font-size: 30px;
+}
+
+b {
+  color: rgb(32, 110, 122);
+  font-size: 30px;
+  font-weight: bold; 
+  
+}
+
+/* Main content */
+.main {
+  margin-top: 230px; /* Add a top margin to avoid content overlay */
+}
+
+
+/* boxes */
+/* every box is this size */
+.box {
+  width: 100px;
+  height: 100px;
+}
+
+/* Every individual box is a different color */
+.box-1 {
+  background: green;
+}
+
+.box-2 {
+  background: red;
+  transform: rotate(360deg);
+  transition: transform 0.5s ease-in;
+}
+
+.box-3 {
+  background: blue;
+}
+
+.box-4 {
+  background: cornsilk;
+}
+
+.box-5 {
+  background: slateblue;
+}
