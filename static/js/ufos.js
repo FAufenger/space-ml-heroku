@@ -78,8 +78,8 @@ function createMarkers(response) {
         var features = response[index];
 
         var coordinateList = []
-        coordinateList.push(features.latitude);
-        coordinateList.push(features.longitude);
+        coordinateList.push(features[10]);
+        coordinateList.push(features[11]);
 
 
         var ufoMarker = L.marker(coordinateList).bindPopup("<h3>Date: " + features.date_occured + "</h3><h3>Place: " + features.country + " : " + features.state + " : " + features.city + "</h3><h3>Shape: " + features.shape + "</h3><h3>Comments: " + features.comments + "</h3>");

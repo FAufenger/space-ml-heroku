@@ -82,7 +82,7 @@ def stars():
 
     # y = list(lastInput.values())
     # z = np.array([[y[5], y[3], y[2], y[0], y[1], y[4]]])
-     # encoded_predictions = model.predict_classes(z)
+    # encoded_predictions = model.predict_classes(z)
 
     session = Session(engine)
     X_train_results = session.query(X_train.Temperature, X_train.L, X_train.R,
