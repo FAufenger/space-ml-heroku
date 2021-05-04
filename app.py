@@ -91,7 +91,8 @@ def stars():
     
     X_scaler = StandardScaler().fit(X_train_results)
 
-    x = requests.get('http://127.0.0.1:5000/api/v1.0/stars')
+    x = requests.get('https://space-ml.herokuapp.com/api/v1.0/stars')
+    
     lastInput = x.json()[-1]
 
     y = list(lastInput.values())
