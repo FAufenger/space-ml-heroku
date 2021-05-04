@@ -1,0 +1,11 @@
+Star classification:
+https://www.kaggle.com/brsdincer/star-type-classification
+
+Asteroids:
+https://www.kaggle.com/nasa/asteroid-impacts?select=impacts.csv
+
+UFO sightings
+https://www.kaggle.com/NUFORC/ufo-sightings
+
+
+

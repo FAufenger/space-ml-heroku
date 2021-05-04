@@ -1,0 +1,167 @@
+SCV (Standard Scalar) 
+
+	Training Data Score: 0.9777777777777777
+	Testing Data Score: 0.95
+
+	GridSearchCV(estimator=SVC(kernel='linear'),
+             param_grid={'C': [1, 5, 10, 50],
+                         'gamma': [0.0001, 0.0005, 0.001, 0.005]},
+             verbose=3)
+
+	Grid Params: {'C': 5, 'gamma': 0.0001}
+	Best grid Score: 0.9777777777777779
+
+########################
+
+SCV (Min Max Scalar)
+
+	Training Data Score: 0.9722222222222222
+	Testing Data Score: 0.95
+
+	GridSearchCV(estimator=SVC(kernel='linear'),
+             param_grid={'C': [1, 5, 10, 50],
+                         'gamma': [0.0001, 0.0005, 0.001, 0.005]},
+             verbose=3)
+
+	Grid Params: {'C': 50, 'gamma': 0.0001}
+	Best grid Score: 0.9777777777777779
+
+#########################
+
+Linear Regression (Standars Scalar)
+
+	Training Data Score: 0.9777777777777777
+	Testing Data Score: 0.95
+	
+	GridSearchCV(estimator=LogisticRegression(),
+             param_grid={'C': [1, 5, 10, 50], 'max_iter': [200, 500, 1000]},
+             verbose=3)
+
+	Grid Params: {'C': 50, 'max_iter': 200}
+	Best grid Score: 0.9777777777777779
+
+########################
+
+Linear Regression (MinMax Scalar)
+
+	Training Data Score: 0.9
+	Testing Data Score: 0.8833333333333333
+
+	GridSearchCV(estimator=LogisticRegression(),
+             param_grid={'C': [1, 5, 10, 50], 'max_iter': [200, 500, 1000]},
+             verbose=3)
+
+	Grid Params: {'C': 50, 'max_iter': 200}
+	Best grid Score: 0.9722222222222221
+
+########################
+
+KNN (Standard Scalar) 
+
+	k=7 Test Acc: 0.956
+	k=7 Test Acc: 0.950
+
+
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00        10
+           1       1.00      1.00      1.00        10
+           2       1.00      1.00      1.00        10
+           3       0.89      0.80      0.84        10
+           4       0.82      0.90      0.86        10
+           5       1.00      1.00      1.00        10
+
+    accuracy                           0.95        60
+   macro avg       0.95      0.95      0.95        60
+weighted avg       0.95      0.95      0.95        60
+
+########################
+
+KNN (MinMax Scalar) 
+
+
+
+	k=31 Test Acc: 0.856
+	k=31 Test Acc: 0.833
+
+
+              precision    recall  f1-score   support
+
+           0       0.91      1.00      0.95        10
+           1       0.90      0.90      0.90        10
+           2       0.71      1.00      0.83        10
+           3       1.00      0.40      0.57        10
+           4       0.69      0.90      0.78        10
+           5       1.00      0.80      0.89        10
+
+    accuracy                           0.83        60
+   macro avg       0.87      0.83      0.82        60
+weighted avg       0.87      0.83      0.82        60
+
+########################
+
+Random Tree (Standard Scaler)
+	
+	Training Data Score: 1.0
+	Testing Data Score: 1.0
+
+	Grid Params: {'max_depth': 3, 'min_samples_split': 2}
+	
+	Best grid Score: 0.9944444444444445 Sometime 1.0
+
+########################
+
+Random Tree (MinMax Scaler)
+
+	Training Data Score: 1.0
+	Testing Data Score: 1.0
+
+	Grid Params: {'max_depth': 3, 'min_samples_split': 10}
+
+	Best grid Score: 0.9944444444444445
+
+########################
+
+Neural Network (Stanndard Scaler)
+
+	60/60 - 0s - loss: 0.1939 - accuracy: 0.9833
+	Loss: 0.19389108022054036, Accuracy: 0.9833333492279053
+	
+	Model: "sequential"
+	_________________________________________________________________
+	Layer (type)                 Output Shape              Param #   
+	=================================================================
+	dense (Dense)                (None, 100)               700       
+	_________________________________________________________________
+	dense_1 (Dense)              (None, 100)               10100     
+	_________________________________________________________________
+	dense_2 (Dense)              (None, 6)                 606       
+	=================================================================
+	Total params: 11,406
+	Trainable params: 11,406
+	Non-trainable params: 0
+
+	
+########################
+
+Neural Network (MinMax Scaler)
+
+	60/60 - 0s - loss: 0.4011 - accuracy: 0.9333
+	Loss: 0.4011284828186035, Accuracy: 0.9333333373069763
+
+	Model: "sequential_1"
+	_________________________________________________________________
+	Layer (type)                 Output Shape              Param #   
+	=================================================================
+	dense_3 (Dense)              (None, 100)               700       
+	_________________________________________________________________
+	dense_4 (Dense)              (None, 100)               10100     
+	_________________________________________________________________
+	dense_5 (Dense)              (None, 6)                 606       
+	=================================================================
+	Total params: 11,406
+	Trainable params: 11,406
+	Non-trainable params: 0
+	
+########################
+
