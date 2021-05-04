@@ -1,6 +1,6 @@
 
-function createMap(ufo1940s, ufo1950s, ufo1960s, ufo1970s, ufo1980s, ufo1990s, ufo2000s, ufo2010s) {
-
+function createMap(ufo1940s, ufo1950s, ufo1960s, ufo1970s, ufo1980s) {
+    // ufo1990s, ufo2000s, ufo2010s
 
     // console.log('create map function start')
 
@@ -40,10 +40,10 @@ function createMap(ufo1940s, ufo1950s, ufo1960s, ufo1970s, ufo1980s, ufo1990s, u
         "UFO 1950s": ufo1950s,
         "UFO 1960s": ufo1960s,
         "UFO 1970s": ufo1970s,
-        "UFO 1980s": ufo1980s,
-        "UFO 1990s": ufo1990s,
-        "UFO 2000s": ufo2000s,
-        "UFO 2010-2013": ufo2010s
+        "UFO 1980s": ufo1980s
+        // "UFO 1990s": ufo1990s,
+        // "UFO 2000s": ufo2000s,
+        // "UFO 2010-2013": ufo2010s
 
     };
 
@@ -69,10 +69,10 @@ function createMarkers(response) {
     ufo1960s = [];
     ufo1970s = [];
     ufo1980s = [];
-    ufo1990s = [];
-    ufo2000s = [];
-    ufo2010s = [];
-
+    // ufo1990s = [];
+    // ufo2000s = [];
+    // ufo2010s = [];
+    console.log(response[1]);
     for (var index = 0; index < response.length; index++) {
 
         var features = response[index];
@@ -85,7 +85,9 @@ function createMarkers(response) {
         var ufoMarker = L.marker(coordinateList).bindPopup("<h3>Date: " + features.date_occured + "</h3><h3>Place: " + features.country + " : " + features.state + " : " + features.city + "</h3><h3>Shape: " + features.shape + "</h3><h3>Comments: " + features.comments + "</h3>");
             
         var t = parseInt(features.date_occured.slice(0,3));
- 
+        
+        console.log(t);
+
         switch (true) {
             case (t < 195):
                 ufo1940s.push(ufoMarker);
@@ -107,17 +109,17 @@ function createMarkers(response) {
                 ufo1980s.push(ufoMarker);
                 // console.log('1980s');
                 break;
-            case (t < 200):
-                ufo1990s.push(ufoMarker);
-                // console.log('1990s');
-                break;
-            case (t < 201):
-                ufo2000s.push(ufoMarker);
-                //console.log('2000s');
-                break;
-            case (t < 202):
-                ufo2010s.push(ufoMarker);
-                // console.log('2010s');
+            // case (t < 200):
+            //     ufo1990s.push(ufoMarker);
+            //     // console.log('1990s');
+            //     break;
+            // case (t < 201):
+            //     ufo2000s.push(ufoMarker);
+            //     //console.log('2000s');
+            //     break;
+            // case (t < 202):
+            //     ufo2010s.push(ufoMarker);
+            //     // console.log('2010s');
                 break;
             default:
                 // console.log('Not working?')
@@ -126,7 +128,8 @@ function createMarkers(response) {
 
     };
 
-    // console.log(ufo1940s);
+    console.log(ufo1940s);
+
 // Display total earthquakes for 30 day period
     var textArea1 = document.getElementById("1940sCount");
     textArea1.append(`1940s: ${ufo1940s.length}`);
@@ -138,22 +141,30 @@ function createMarkers(response) {
     textArea4.append(`1970s: ${ufo1970s.length}`);
     var textArea5 = document.getElementById("1980sCount");
     textArea5.append(`1980s: ${ufo1980s.length}`);
-    var textArea6 = document.getElementById("1990sCount");
-    textArea6.append(`1990s: ${ufo1990s.length}`);
-    var textArea7 = document.getElementById("2000sCount");
-    textArea7.append(`2000s: ${ufo2000s.length}`);
-    var textArea8 = document.getElementById("2010sCount");
-    textArea8.append(`2010-2013: ${ufo2010s.length}`);
+    // var textArea6 = document.getElementById("1990sCount");
+    // textArea6.append(`1990s: ${ufo1990s.length}`);
+    // var textArea7 = document.getElementById("2000sCount");
+    // textArea7.append(`2000s: ${ufo2000s.length}`);
+    // var textArea8 = document.getElementById("2010sCount");
+    // textArea8.append(`2010-2013: ${ufo2010s.length}`);
     
     //Create a layer group made from the array, pass it into the createmap function
     createMap(L.layerGroup(ufo1940s), L.layerGroup(ufo1950s), L.layerGroup(ufo1960s), L.layerGroup(ufo1970s), 
-              L.layerGroup(ufo1980s), L.layerGroup(ufo1990s), L.layerGroup(ufo2000s), L.layerGroup(ufo2010s));
+              L.layerGroup(ufo1980s));
 };
+// , L.layerGroup(ufo1990s), L.layerGroup(ufo2000s), L.layerGroup(ufo2010s)
+
+// urlUFO = '/api/v1.0/ufos'
+
+// // Perform an API call to the API to get information. Call createMarkers when complete
+// createMarkers(d3.json(urlUFO));
 
 
+ //  Was using an async function to delay lad up due to large data. Causes map to not load in Heroku
+  // reduced decades and removed to deploy
 async function readUrl() {
     let promise = new Promise((resolve, reject) => {
-        setTimeout(() => resolve(d3.json('/api/v1.0/ufos')), 5000)
+        setTimeout(() => resolve(d3.json('/api/v1.0/ufos')), 10)
     });
 
     let result = await promise; // wait until the promise resolves (*)

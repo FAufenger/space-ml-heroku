@@ -8,10 +8,12 @@
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
   <!-- Leaflet CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
     integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
     crossorigin="" />
+    
   <!-- Our CSS -->
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styleMap.css') }}">
 
@@ -60,14 +62,14 @@
         <div id="1960sCount"></div>
         <div id="1970sCount"></div>
         <div id="1980sCount"></div>
-        <div id="1990sCount">Too large for Herou: ~10,000 rows of data</div>
-        <div id="2000sCount">Too large for Herou: ~32,000 rows of data</div>
-        <div id="2010sCount">Too large for Herou: ~28,000 rows of data</div>
+        <div id="1990sCount">Too large for Herou & Leaflet: ~10,000 rows of data</div>
+        <div id="2000sCount">Too large for Herou & Leaflet: ~32,000 rows of data</div>
+        <div id="2010sCount">Too large for Herou & Leaflet: ~28,000 rows of data</div>
       </div>
     </div>
   </div>
 
-
+  <br><br>
   <p><b>The search continues!</b><br>
     Is big foot in space?!?! Click the image below to be taken to <br>
     <b>NASA video reveals ‘bigfoot skull’ on Mars</b>
@@ -76,6 +78,12 @@
       class="btn btn-default" class="center" role="button">
       <img src="{{ url_for('static', filename='img/bigfoot') }}" alt="bigfoot_in_space_link" class="center"></a></p>
 
+
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+    crossorigin=""></script>
 
   <!-- Bootstrap -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -90,7 +98,7 @@
 
   <!-- D3 JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js"></script>
-  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <!-- <script src="https://cdn.plot.ly/plotly-latest.min.js"></script> -->
 
   <!-- API key -->
   <script type="text/javascript" src="{{ url_for('static', filename='js/config.js') }}"></script>
@@ -99,10 +107,6 @@
   <!-- <script type="text/javascript" src="static/logic.js"></script> -->
   <script type="text/javascript" src="{{ url_for('static', filename='js/ufos.js') }}"></script>
 
-  <!-- Leaflet JS -->
-  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
-    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
-    crossorigin=""></script>
 
 </body>
 
