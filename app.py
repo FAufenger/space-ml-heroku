@@ -84,21 +84,24 @@ def stars():
     # z = np.array([[y[5], y[3], y[2], y[0], y[1], y[4]]])
      # encoded_predictions = model.predict_classes(z)
 
-    session = Session(engine)
-    X_train_results = session.query(X_train.Temperature, X_train.L, X_train.R,
-                            X_train.A_M, X_train.Color, X_train.Spectral_Class).all()
-    session.close()
+    # session = Session(engine)
+    # X_train_results = session.query(X_train.Temperature, X_train.L, X_train.R,
+    #                         X_train.A_M, X_train.Color, X_train.Spectral_Class).all()
+    # session.close()
     
-    X_scaler = StandardScaler().fit(X_train_results)
+    # X_scaler = StandardScaler().fit(X_train_results)
 
     # x = requests.get('https://space-ml.herokuapp.com/api/v1.0/stars')
-    x = [1,2,3,4,5]
-    lastInput = x.json()[-1]
+    # lastInput = x.json()[-1]
 
-    y = list(lastInput.values())
-    z = [y[5], y[2], y[3], y[0], y[1], y[4]]
-    X_train_scaled = X_scaler.transform([z])
-    value = np.array(X_train_scaled)
+    # = list(lastInput.values())
+    # z = [y[5], y[2], y[3], y[0], y[1], y[4]]
+    # X_train_scaled = X_scaler.transform([z])
+    # value = np.array(X_train_scaled)
+    
+    z = [1,2,3,4,5]
+    value = np.array([z])
+    
     encoded_predictions = model.predict_classes(value)
     #encoded_predictions = model.predict_classes(np.array([list(lastInput.values())]))
 
