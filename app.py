@@ -20,7 +20,7 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense
 
 from tensorflow.keras.callbacks import ModelCheckpoint
-from array import array
+# from array import array
 
 
 
