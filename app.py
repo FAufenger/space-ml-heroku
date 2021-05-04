@@ -95,7 +95,9 @@ def stars():
     # x= [1,2,3,4,5]
     lastInput = x.json()[-1]
 
-    y = list(lastInput.values())
+    # y = list(lastInput.values())
+    
+    y = lastInput
     z = [y[5], y[2], y[3], y[0], y[1], y[4]]
     X_train_scaled = X_scaler.transform([z])
     value = np.array(X_train_scaled)
